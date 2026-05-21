@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: homer
+  namespace: portal
+spec:
+  type: ClusterIP
+  selector:
+    app: homer
+  ports:
+    - port: 80
+      targetPort: 8080

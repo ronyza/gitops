@@ -1,24 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rabbitmq
+  name: portal
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    chart: rabbitmq
-    targetRevision: 14.6.6
-    helm:
-      values: |
-        auth:
-          username: rabbitmq
-          password: rabbitmq
-        service:
-          type: ClusterIP
+    repoURL: https://github.com/ronyza/gitops.git
+    targetRevision: main
+    path: platform/portal/manifests
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: messaging
+    namespace: portal
   syncPolicy:
     automated:
       prune: true

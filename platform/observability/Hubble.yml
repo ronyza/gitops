@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://helm.cilium.io
-    chart: hubble-ui
-    targetRevision: 1.14.0
+    repoURL: https://github.com/cilium/hubble-ui.git
+    targetRevision: v0.13.0
+    path: install/kubernetes/hubble-ui
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
