@@ -7,15 +7,17 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/ronyza/one-click-k8s.git
+    repoURL: https://github.com/ronyza/gitops.git
     targetRevision: main
     path: platform
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: platform
+    namespace: argocd
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
