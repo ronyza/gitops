@@ -11,6 +11,18 @@ spec:
     targetRevision: 14.6.6
     helm:
       values: |
+        global:
+          security:
+            allowInsecureImages: true
+        image:
+          registry: docker.io
+          repository: bitnamilegacy/rabbitmq
+          tag: 3.13.6-debian-12-r1
+        volumePermissions:
+          enabled: false
+          image:
+            registry: docker.io
+            repository: bitnamilegacy/os-shell
         auth:
           username: rabbitmq
           password: rabbitmq
