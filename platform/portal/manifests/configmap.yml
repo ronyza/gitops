@@ -42,15 +42,3 @@ data:
             tag: "messaging"
             url: "https://rabbitmq.local:30443"
             target: "_blank"
-
-          - name: "Kubernetes Dashboard"
-            subtitle: "Cluster UI"
-            tag: "ops"
-            url: "https://dashboard.local:30443"
-            target: "_blank"
-
-          - name: "Hubble UI"
-            subtitle: "Network Observability"
-            tag: "observability"
-            url: "https://hubble.local:30443"
-            target: "_blank"
