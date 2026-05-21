@@ -14,9 +14,23 @@ spec:
         grafana:
           service:
             type: ClusterIP
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            hosts:
+              - grafana.local
+            path: /
+          adminPassword: admin
         prometheus:
           service:
             type: ClusterIP
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            hosts:
+              - prometheus.local
+            paths:
+              - /
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
