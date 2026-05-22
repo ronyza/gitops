@@ -21,6 +21,14 @@ spec:
               - grafana.local
             path: /
           adminPassword: admin
+          additionalDataSources:
+            - name: Loki
+              type: loki
+              access: proxy
+              url: http://loki.observability.svc.cluster.local:3100
+              isDefault: false
+              jsonData:
+                maxLines: 1000
         prometheus:
           service:
             type: ClusterIP
